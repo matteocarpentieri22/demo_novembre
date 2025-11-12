@@ -51,19 +51,19 @@ function ChatbotPDTA({ onBack }: ChatbotPDTAProps) {
     <div className="max-w-4xl mx-auto">
       <button
         onClick={onBack}
-        className="flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-6 font-medium"
+        className="flex items-center gap-2 text-iov-dark-blue hover:text-iov-dark-blue-hover mb-6 font-medium"
       >
         <ArrowLeft className="w-5 h-5" />
         Torna alla Home
       </button>
 
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-        <div className="bg-gradient-to-r from-green-600 to-green-500 p-6 text-white">
+        <div className="bg-gradient-to-r from-iov-dark-blue to-iov-dark-blue-hover p-6 text-white">
           <h2 className="text-2xl font-bold flex items-center gap-3">
             <Bot className="w-8 h-8" />
             Chatbot PDTA - Assistente AI
           </h2>
-          <p className="text-green-50 mt-2">
+          <p className="text-blue-100 mt-2">
             Assistente virtuale per valutazione casi clinici e interpretazione PDTA
           </p>
         </div>
@@ -77,15 +77,15 @@ function ChatbotPDTA({ onBack }: ChatbotPDTAProps) {
               }`}
             >
               {message.sender === 'bot' && (
-                <div className="bg-green-600 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="bg-iov-dark-blue w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
                   <Bot className="w-6 h-6 text-white" />
                 </div>
               )}
               <div
                 className={`max-w-[70%] rounded-lg p-4 ${
                   message.sender === 'user'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-white border border-gray-200 text-gray-800'
+                    ? 'bg-iov-dark-blue text-white'
+                    : 'bg-white border border-gray-200 text-iov-gray-text'
                 }`}
               >
                 <p className="whitespace-pre-wrap">{message.text}</p>
@@ -101,7 +101,7 @@ function ChatbotPDTA({ onBack }: ChatbotPDTAProps) {
                 </p>
               </div>
               {message.sender === 'user' && (
-                <div className="bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="bg-iov-dark-blue w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
                   <User className="w-6 h-6 text-white" />
                 </div>
               )}
@@ -117,11 +117,11 @@ function ChatbotPDTA({ onBack }: ChatbotPDTAProps) {
               onChange={(e) => setInputText(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSend()}
               placeholder="Descrivi il caso clinico o fai una domanda..."
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-iov-dark-blue"
             />
             <button
               onClick={handleSend}
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg flex items-center gap-2 font-medium transition-colors"
+              className="bg-iov-dark-blue hover:bg-iov-dark-blue-hover text-white px-6 py-3 rounded-lg flex items-center gap-2 font-medium transition-colors"
             >
               <Send className="w-5 h-5" />
               Invia

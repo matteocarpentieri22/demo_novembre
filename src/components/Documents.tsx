@@ -23,15 +23,15 @@ function Documents({ onBack }: DocumentsProps) {
     <div className="max-w-5xl mx-auto">
       <button
         onClick={onBack}
-        className="flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-6 font-medium"
+        className="flex items-center gap-2 text-iov-dark-blue hover:text-iov-dark-blue-hover mb-6 font-medium"
       >
         <ArrowLeft className="w-5 h-5" />
         Torna alla Home
       </button>
 
       <div className="bg-white rounded-lg shadow-lg p-8">
-        <h2 className="text-3xl font-bold text-gray-800 mb-2">Documenti PDTA</h2>
-        <p className="text-gray-600 mb-2">
+        <h2 className="text-3xl font-bold text-iov-gray-text mb-2">Documenti PDTA</h2>
+        <p className="text-iov-gray-text mb-2 opacity-80">
           Visualizzazione e download documenti per ciascun PDTA
         </p>
         <p className="text-sm text-orange-600 mb-8 italic">
@@ -45,30 +45,30 @@ function Documents({ onBack }: DocumentsProps) {
               onClick={() => setSelectedPDTA(pdta.id)}
               className={`p-4 rounded-lg border-2 transition-all text-left ${
                 selectedPDTA === pdta.id
-                  ? 'border-purple-600 bg-purple-50'
-                  : 'border-gray-200 hover:border-purple-300 bg-white'
+                  ? 'border-iov-dark-blue bg-iov-light-blue-light'
+                  : 'border-gray-200 hover:border-iov-light-blue bg-white'
               }`}
             >
-              <h3 className="font-semibold text-gray-800">{pdta.name}</h3>
+              <h3 className="font-semibold text-iov-gray-text">{pdta.name}</h3>
             </button>
           ))}
         </div>
 
         {selectedPDTA && (
-          <div className="bg-purple-50 rounded-lg p-6 border-2 border-purple-200">
-            <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-              <FileText className="w-6 h-6 text-purple-600" />
+          <div className="bg-iov-light-blue-light rounded-lg p-6 border-2 border-iov-light-blue">
+            <h3 className="text-xl font-bold text-iov-gray-text mb-4 flex items-center gap-2">
+              <FileText className="w-6 h-6 text-iov-dark-blue" />
               Documenti disponibili - PDTA {pdtaData.find(p => p.id === selectedPDTA)?.name}
             </h3>
             <div className="space-y-3">
               {documentTypes.map((doc) => (
                 <div
                   key={doc.id}
-                  className="bg-white rounded-lg p-4 flex items-center justify-between border border-purple-200"
+                  className="bg-white rounded-lg p-4 flex items-center justify-between border border-iov-light-blue"
                 >
                   <div className="flex items-center gap-3">
-                    <FileText className="w-5 h-5 text-purple-600" />
-                    <span className="font-medium text-gray-800">{doc.name}</span>
+                    <FileText className="w-5 h-5 text-iov-dark-blue" />
+                    <span className="font-medium text-iov-gray-text">{doc.name}</span>
                   </div>
                   <button
                     onClick={() =>
@@ -77,7 +77,7 @@ function Documents({ onBack }: DocumentsProps) {
                         doc.name
                       )
                     }
-                    className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors"
+                    className="flex items-center gap-2 bg-iov-dark-blue hover:bg-iov-dark-blue-hover text-white px-4 py-2 rounded-lg transition-colors"
                   >
                     <Download className="w-4 h-4" />
                     Scarica
