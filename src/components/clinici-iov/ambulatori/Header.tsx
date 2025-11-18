@@ -1,6 +1,11 @@
-import logo from '../../Immagine1.svg';
+import logo from '../../../../Immagine1.svg';
 
-function Header() {
+interface HeaderProps {
+  title: string;
+  subtitle: string;
+}
+
+function Header({ title, subtitle }: HeaderProps) {
   return (
     <header className="bg-iov-dark-blue shadow-md">
       <div className="container mx-auto px-4 py-5 sm:py-7 md:py-8">
@@ -14,10 +19,10 @@ function Header() {
           </div>
           <div className="min-w-0 flex-1">
             <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-white truncate">
-              Portale MMG
+              {title}
             </h1>
             <p className="text-xs sm:text-sm text-blue-100 hidden sm:block">
-              Area Medici di Medicina Generale
+              {subtitle}
             </p>
           </div>
         </div>
@@ -27,3 +32,5 @@ function Header() {
 }
 
 export default Header;
+
+

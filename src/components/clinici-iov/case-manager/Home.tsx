@@ -1,57 +1,49 @@
-import { FileText, MessageSquare, FolderOpen, ExternalLink, Info, ArrowUpRight } from 'lucide-react';
-import { Page } from '../App';
+import { FileText, ClipboardList, Calendar, User, ArrowUpRight } from 'lucide-react';
+import { CaseManagerPage } from './types';
 
 interface HomeProps {
-  onNavigate: (page: Page) => void;
+  onNavigate: (page: CaseManagerPage) => void;
 }
 
 function Home({ onNavigate }: HomeProps) {
   const menuItems = [
     {
-      id: 'pdta-selection' as Page,
+      id: 'triage' as CaseManagerPage,
+      icon: ClipboardList,
+      title: 'Triage',
+      description: 'Gestisci il triage dei pazienti',
+      color: 'bg-iov-light-blue',
+      textColor: 'text-iov-dark-blue-text',
+    },
+    {
+      id: 'elenco-richieste-ambulatori' as CaseManagerPage,
       icon: FileText,
-      title: 'Selezione PDTA',
-      description: 'Verifica dei requisiti ed esami preliminari per i PDTA',
+      title: 'Elenco Richieste Ambulatori',
+      description: 'Visualizza le richieste degli ambulatori disciplinari',
       color: 'bg-iov-light-blue',
-      textColor: 'text-iov-dark-blue',
+      textColor: 'text-iov-dark-blue-text',
     },
     {
-      id: 'chatbot' as Page,
-      icon: MessageSquare,
-      title: 'Chatbot PDTA',
-      description: 'Assistente AI per valutazione casi clinici e interpretazione PDTA',
+      id: 'visite-ambulatori' as CaseManagerPage,
+      icon: Calendar,
+      title: 'Visite Ambulatori',
+      description: 'Gestisci le visite degli ambulatori',
       color: 'bg-iov-light-blue',
-      textColor: 'text-iov-dark-blue',
+      textColor: 'text-iov-dark-blue-text',
     },
     {
-      id: 'documents' as Page,
-      icon: FolderOpen,
-      title: 'Documenti PDTA',
-      description: 'Visualizzazione e download documenti per ciascun PDTA',
+      id: 'visualizza-paziente' as CaseManagerPage,
+      icon: User,
+      title: 'Visualizza Paziente',
+      description: 'Consulta i dati del paziente',
       color: 'bg-iov-light-blue',
-      textColor: 'text-iov-dark-blue',
-    },
-    {
-      id: 'links' as Page,
-      icon: ExternalLink,
-      title: 'Link Utili',
-      description: 'Accesso rapido a servizi e risorse per la pratica medica',
-      color: 'bg-iov-light-blue',
-      textColor: 'text-iov-dark-blue',
-    },
-    {
-      id: 'access-info' as Page,
-      icon: Info,
-      title: 'Informazioni Accesso IOV',
-      description: 'Processo di accesso e contatti per l\'invio pazienti',
-      color: 'bg-iov-light-blue',
-      textColor: 'text-iov-dark-blue',
+      textColor: 'text-iov-dark-blue-text',
     },
   ];
 
   return (
     <div className="max-w-6xl mx-auto">
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 sm:gap-7">
         {menuItems.map((item) => {
           const Icon = item.icon;
           return (
@@ -94,3 +86,4 @@ function Home({ onNavigate }: HomeProps) {
 }
 
 export default Home;
+

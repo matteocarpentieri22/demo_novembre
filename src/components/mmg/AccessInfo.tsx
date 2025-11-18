@@ -136,9 +136,9 @@ function AccessInfo({ onBack }: AccessInfoProps) {
           </div>
         </div>
 
-        <div className="bg-iov-yellow-light rounded-lg p-4 border border-iov-yellow">
+        <div className="bg-iov-gray-light rounded-lg p-4 border border-iov-gray">
           <p className="text-sm text-iov-gray-text">
-            <strong>Nota:</strong> contenuti mock a solo scopo dimostrativo.
+            Nota: contenuti mock a solo scopo dimostrativo.
             I contatti e le procedure reali saranno disponibili nell'ambiente di produzione.
           </p>
         </div>
@@ -148,3 +148,4 @@ function AccessInfo({ onBack }: AccessInfoProps) {
 }
 
 export default AccessInfo;
+

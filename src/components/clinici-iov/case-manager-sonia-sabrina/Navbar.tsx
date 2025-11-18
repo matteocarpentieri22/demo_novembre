@@ -1,21 +1,18 @@
 import { LogOut, User } from 'lucide-react';
-import { Page } from '../App';
+import { CaseManagerSoniaSabrinaPage } from './types';
 
 interface NavbarProps {
-  currentPage: Page;
-  onNavigate: (page: Page) => void;
+  currentPage: CaseManagerSoniaSabrinaPage;
+  onNavigate: (page: CaseManagerSoniaSabrinaPage) => void;
   isLoggedIn: boolean;
   onLogout: () => void;
 }
 
 function Navbar({ currentPage, onNavigate, isLoggedIn, onLogout }: NavbarProps) {
   const navItems = [
-    { id: 'home' as Page, label: 'Home' },
-    { id: 'pdta-selection' as Page, label: 'Selezione PDTA' },
-    { id: 'chatbot' as Page, label: 'Chatbot PDTA' },
-    { id: 'documents' as Page, label: 'Documenti' },
-    { id: 'links' as Page, label: 'Link Utili' },
-    { id: 'access-info' as Page, label: 'Accesso IOV' },
+    { id: 'home' as CaseManagerSoniaSabrinaPage, label: 'Home' },
+    { id: 'triage' as CaseManagerSoniaSabrinaPage, label: 'Triage Paziente' },
+    { id: 'elenco-pazienti' as CaseManagerSoniaSabrinaPage, label: 'Elenco Pazienti' },
   ];
 
   return (
@@ -43,7 +40,7 @@ function Navbar({ currentPage, onNavigate, isLoggedIn, onLogout }: NavbarProps) 
               <div className="hidden sm:flex items-center gap-2 bg-iov-light-blue-light px-3 sm:px-4 py-2 rounded-lg">
                 <User className="w-4 h-4 text-iov-dark-blue" />
                 <span className="text-xs sm:text-sm font-medium text-iov-gray-text hidden md:inline">
-                  Dr. Marco Rossi
+                  Case Manager Sonia-Sabrina
                 </span>
               </div>
               <button
@@ -62,3 +59,4 @@ function Navbar({ currentPage, onNavigate, isLoggedIn, onLogout }: NavbarProps) 
 }
 
 export default Navbar;
+

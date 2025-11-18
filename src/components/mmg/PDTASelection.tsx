@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ArrowLeft, ChevronRight } from 'lucide-react';
-import { pdtaData } from '../data/pdtaData';
+import { pdtaData } from '../../data/pdtaData';
 
 interface PDTASelectionProps {
   onBack: () => void;
@@ -79,3 +79,4 @@ function PDTASelection({ onBack }: PDTASelectionProps) {
 }
 
 export default PDTASelection;
+

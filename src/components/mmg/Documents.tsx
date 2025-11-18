@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ArrowLeft, Download, FileText } from 'lucide-react';
-import { pdtaData } from '../data/pdtaData';
+import { pdtaData } from '../../data/pdtaData';
 
 interface DocumentsProps {
   onBack: () => void;
@@ -34,7 +34,7 @@ function Documents({ onBack }: DocumentsProps) {
         <p className="text-iov-gray-text mb-2 opacity-80">
           Visualizzazione e download documenti per ciascun PDTA
         </p>
-        <p className="text-sm text-orange-600 mb-8 italic">
+        <p className="text-sm text-gray-600 mb-8 italic">
           Demo - I documenti saranno disponibili dopo l'integrazione con il sistema documentale IOV
         </p>
 
@@ -99,3 +99,4 @@ function Documents({ onBack }: DocumentsProps) {
 }
 
 export default Documents;
+

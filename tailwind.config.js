@@ -9,21 +9,25 @@ export default {
           // Blu scuro per header principale
           'dark-blue': '#104676',
           'dark-blue-hover': '#0d3859',
+          'dark-blue-text': '#002B58',
           
           // Giallo IOV per pulsanti e card principali
-          'yellow': '#FFD700',
+          'yellow': '#FFE69C',
           'yellow-light': '#FFE44D',
           'yellow-dark': '#E6C200',
+          'yellow-text': '#5F2007',
           
           // Blu chiaro per card servizi
-          'light-blue': '#B3E5FC',
+          'light-blue': '#D9F1FF',
           'light-blue-light': '#E1F5FE',
           'light-blue-dark': '#81D4FA',
           
           // Rosa per card ricerca
-          'pink': '#F48FB1',
+          'pink': '#FBE5FF',
           'pink-light': '#F8BBD0',
           'pink-dark': '#E91E63',
+          'pink-text': '#6F0145',
+          'pink-border': '#E8B3E8',
           
           // Rosso per logo Regione Veneto
           'veneto-red': '#C8102E',
@@ -34,8 +38,8 @@ export default {
         },
       },
       backgroundImage: {
-        'iov-gradient': 'linear-gradient(to bottom right, #E1F5FE 0%, #FFFFFF 100%)',
-        'iov-gradient-alt': 'linear-gradient(135deg, #B3E5FC 0%, #E1F5FE 50%, #FFFFFF 100%)',
+        'iov-gradient': 'linear-gradient(to bottom right, #F5FBFF 0%, #FFFFFF 100%)',
+        'iov-gradient-alt': 'linear-gradient(135deg, #D9F1FF 0%, #E1F5FE 50%, #FFFFFF 100%)',
       },
     },
   },
