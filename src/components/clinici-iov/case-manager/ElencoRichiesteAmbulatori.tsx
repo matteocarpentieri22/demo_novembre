@@ -1148,16 +1148,6 @@ function ElencoRichiesteAmbulatori({ onBack }: ElencoRichiesteAmbulatoriProps) {
                         className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-iov-dark-blue"
                       />
                     </div>
-                    <div className="md:col-span-2">
-                      <label className="block text-sm font-semibold text-iov-gray-text mb-2">Medico (opzionale)</label>
-                      <input
-                        type="text"
-                        value={newSlot.medico || ''}
-                        onChange={(e) => setNewSlot({ ...newSlot, medico: e.target.value })}
-                        placeholder="Es. Dr. Maria Verdi"
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-iov-dark-blue"
-                      />
-                    </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <button

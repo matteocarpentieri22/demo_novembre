@@ -28,6 +28,8 @@ export interface RichiestaPrenotazione {
   stato: 'in-attesa' | 'prenotato' | 'rifiutato';
   dataRichiesta: string;
   orarioRichiesta: string;
+  dataPrenotazione?: string;
+  orarioPrenotazione?: string;
   // Campi condizionali per Osteoncologia
   uoRiferimento?: string;
   uoRiferimentoAltro?: string;

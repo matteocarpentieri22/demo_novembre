@@ -20,6 +20,8 @@ const mockRichieste: RichiestaPrenotazione[] = [
     stato: 'prenotato',
     dataRichiesta: '2024-01-15',
     orarioRichiesta: '14:30',
+    dataPrenotazione: '2024-02-02',
+    orarioPrenotazione: '09:15',
     score: 5,
     impegnativaFile: 'impegnativa_rossi_mario_20240115.pdf',
     psKarnofsky: '>70',
@@ -66,6 +68,8 @@ const mockRichieste: RichiestaPrenotazione[] = [
     stato: 'prenotato',
     dataRichiesta: '2024-01-18',
     orarioRichiesta: '11:45',
+    dataPrenotazione: '2024-02-05',
+    orarioPrenotazione: '10:30',
     impegnativaFile: 'impegnativa_verdi_luca_20240118.pdf',
     stadio: 'localmente avanzato',
     finalitaTrattamento: 'curativo',
@@ -121,6 +125,8 @@ const mockRichieste: RichiestaPrenotazione[] = [
     stato: 'prenotato',
     dataRichiesta: '2024-01-25',
     orarioRichiesta: '08:00',
+    dataPrenotazione: '2024-01-30',
+    orarioPrenotazione: '08:45',
     score: 12,
     livelloUrgenza: 'URG',
     impegnativaFile: 'impegnativa_blu_marco_20240125.pdf',
@@ -189,6 +195,8 @@ const mockRichieste: RichiestaPrenotazione[] = [
     stato: 'prenotato',
     dataRichiesta: '2024-01-16',
     orarioRichiesta: '10:00',
+    dataPrenotazione: '2024-01-29',
+    orarioPrenotazione: '11:15',
     score: 6,
     impegnativaFile: 'impegnativa_rosso_giuseppe_20240116.pdf',
     psKarnofsky: '50-60',
@@ -266,6 +274,8 @@ const mockRichieste: RichiestaPrenotazione[] = [
     stato: 'prenotato',
     dataRichiesta: '2024-01-23',
     orarioRichiesta: '11:00',
+    dataPrenotazione: '2024-02-01',
+    orarioPrenotazione: '12:00',
     score: 4,
     impegnativaFile: 'impegnativa_nero_marco_20240123.pdf',
     psKarnofsky: '>70',
@@ -287,6 +297,8 @@ const mockRichieste: RichiestaPrenotazione[] = [
     stato: 'prenotato',
     dataRichiesta: '2024-01-24',
     orarioRichiesta: '09:30',
+    dataPrenotazione: '2024-02-03',
+    orarioPrenotazione: '09:00',
     score: 11,
     livelloUrgenza: 'URG',
     impegnativaFile: 'impegnativa_blu_paola_20240124.pdf',
@@ -626,6 +638,30 @@ function ElencoRichieste({ onBack }: ElencoRichiesteProps) {
                 <p className="text-lg font-bold text-[#0D3859]">{selectedRichiesta.dataRichiesta} <span className="text-lg font-bold text-[#0D3859]">alle {selectedRichiesta.orarioRichiesta}</span></p>
               </div>
             </div>
+            
+            {selectedRichiesta.stato === 'prenotato' && selectedRichiesta.dataPrenotazione && selectedRichiesta.orarioPrenotazione && (
+              <div className="bg-gradient-to-br from-emerald-50 to-white rounded-xl p-6 border-2 border-emerald-200 shadow-sm">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-500 flex items-center justify-center">
+                    <Calendar className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-emerald-900">Slot prenotato</h3>
+                    <p className="text-sm text-emerald-800/80">Informazioni su data e orario assegnati</p>
+                  </div>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="bg-white rounded-lg p-4 border border-gray-200">
+                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Data prenotazione</label>
+                    <p className="text-lg font-semibold text-emerald-900">{selectedRichiesta.dataPrenotazione}</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-4 border border-gray-200">
+                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Orario</label>
+                    <p className="text-lg font-semibold text-emerald-900">{selectedRichiesta.orarioPrenotazione}</p>
+                  </div>
+                </div>
+              </div>
+            )}
             
             {/* Quesito Diagnostico */}
             <div className="bg-gradient-to-br from-amber-50 to-white rounded-xl p-6 border-2 border-amber-100 shadow-sm">
