@@ -11,8 +11,8 @@ function Home({ onNavigate, notificheNonLette }: HomeProps) {
     {
       id: 'richiesta-prenotazione' as OncologoPage,
       icon: FileText,
-      title: 'Richiesta prenotazione in ambulatori multidisciplinari',
-      description: 'Compila il form per richiedere una prenotazione visita',
+      title: 'Richiesta prenotazione',
+      description: 'Compila il form per richiedere una prenotazione visita presso gli ambulatori multidisciplinari',
       color: 'bg-iov-light-blue',
       textColor: 'text-iov-dark-blue-text',
       badge: undefined as number | undefined,
@@ -20,8 +20,8 @@ function Home({ onNavigate, notificheNonLette }: HomeProps) {
     {
       id: 'elenco-richieste' as OncologoPage,
       icon: List,
-      title: 'Elenco richieste in ambulatori multidisciplinari',
-      description: 'Visualizza tutte le richieste di prenotazione effettuate',
+      title: 'Elenco richieste',
+      description: 'Visualizza tutte le richieste di prenotazione effettuate presso gli ambulatori multidisciplinari',
       color: 'bg-iov-light-blue',
       textColor: 'text-iov-dark-blue-text',
       badge: undefined as number | undefined,
@@ -38,8 +38,8 @@ function Home({ onNavigate, notificheNonLette }: HomeProps) {
     {
       id: 'storico-visite in' as OncologoPage,
       icon: History,
-      title: 'Storico Visite in ambulatori multidisciplinari',
-      description: 'Consulta lo storico delle visite con filtro per data',
+      title: 'Storico Visite',
+      description: 'Consulta lo storico delle visite  presso gli ambulatori multidisciplinari',
       color: 'bg-iov-light-blue',
       textColor: 'text-iov-dark-blue-text',
       badge: undefined as number | undefined,
