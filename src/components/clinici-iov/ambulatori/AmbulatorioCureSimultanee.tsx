@@ -75,7 +75,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v1',
     ambulatorio: 'Cure Simultanee',
-    data: '2024-02-15',
+    data: '15-02-2024',
     ora: '10:00',
     tipo: 'visita',
     paziente: {
@@ -90,7 +90,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v2',
     ambulatorio: 'Cure Simultanee',
-    data: '2024-02-15',
+    data: '15-02-2024',
     ora: '11:00',
     tipo: 'visita',
     paziente: {
@@ -105,7 +105,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v3',
     ambulatorio: 'Cure Simultanee',
-    data: '2024-02-20',
+    data: '20-02-2024',
     ora: '09:30',
     tipo: 'visita',
     paziente: {
@@ -120,7 +120,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v4',
     ambulatorio: 'Cure Simultanee',
-    data: '2024-02-22',
+    data: '22-02-2024',
     ora: '09:00',
     tipo: 'visita',
     paziente: {
@@ -135,7 +135,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v11',
     ambulatorio: 'Cure Simultanee',
-    data: '2024-02-15',
+    data: '15-02-2024',
     ora: '14:00',
     tipo: 'visita',
     paziente: {
@@ -150,7 +150,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v12',
     ambulatorio: 'Cure Simultanee',
-    data: '2024-02-18',
+    data: '18-02-2024',
     ora: '10:30',
     tipo: 'visita',
     paziente: {

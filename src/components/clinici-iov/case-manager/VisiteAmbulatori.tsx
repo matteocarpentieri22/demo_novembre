@@ -12,7 +12,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v1',
     ambulatorio: 'Cure Simultanee',
-    data: '2024-02-15',
+    data: '15-02-2024',
     ora: '10:00',
     tipo: 'visita',
     paziente: {
@@ -27,7 +27,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v2',
     ambulatorio: 'Cure Simultanee',
-    data: '2024-02-15',
+    data: '15-02-2024',
     ora: '11:00',
     tipo: 'visita',
     paziente: {
@@ -42,7 +42,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v3',
     ambulatorio: 'Cure Simultanee',
-    data: '2024-02-20',
+    data: '20-02-2024',
     ora: '09:30',
     tipo: 'visita',
     paziente: {
@@ -57,7 +57,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v4',
     ambulatorio: 'Cure Simultanee',
-    data: '2024-02-22',
+    data: '22-02-2024',
     ora: '09:00',
     tipo: 'visita',
     paziente: {
@@ -73,7 +73,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v5',
     ambulatorio: 'Oncogeriatria',
-    data: '2024-02-10',
+    data: '10-02-2024',
     ora: '14:30',
     tipo: 'visita',
     paziente: {
@@ -94,7 +94,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v6',
     ambulatorio: 'Oncogeriatria',
-    data: '2024-02-12',
+    data: '12-02-2024',
     ora: '10:00',
     tipo: 'visita',
     paziente: {
@@ -120,7 +120,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v7',
     ambulatorio: 'Oncogeriatria',
-    data: '2024-02-14',
+    data: '14-02-2024',
     ora: '11:30',
     tipo: 'visita',
     paziente: {
@@ -142,7 +142,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v8',
     ambulatorio: 'Osteoncologia',
-    data: '2024-02-05',
+    data: '05-02-2024',
     ora: '08:30',
     tipo: 'visita',
     paziente: {
@@ -158,7 +158,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v9',
     ambulatorio: 'Osteoncologia',
-    data: '2024-02-05',
+    data: '05-02-2024',
     tipo: 'discussione',
     paziente: {
       nome: 'Paolo',
@@ -173,7 +173,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v10',
     ambulatorio: 'Osteoncologia',
-    data: '2024-02-25',
+    data: '25-02-2024',
     ora: '15:00',
     tipo: 'visita',
     paziente: {
@@ -190,7 +190,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v11',
     ambulatorio: 'Cure Simultanee',
-    data: '2024-02-15',
+    data: '15-02-2024',
     ora: '14:00',
     tipo: 'visita',
     paziente: {
@@ -205,7 +205,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v12',
     ambulatorio: 'Cure Simultanee',
-    data: '2024-02-18',
+    data: '18-02-2024',
     ora: '10:30',
     tipo: 'visita',
     paziente: {
@@ -221,7 +221,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v13',
     ambulatorio: 'Oncogeriatria',
-    data: '2024-02-10',
+    data: '10-02-2024',
     ora: '16:00',
     tipo: 'visita',
     paziente: {
@@ -246,7 +246,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v14',
     ambulatorio: 'Oncogeriatria',
-    data: '2024-02-12',
+    data: '12-02-2024',
     ora: '15:30',
     tipo: 'visita',
     paziente: {
@@ -268,7 +268,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v15',
     ambulatorio: 'Osteoncologia',
-    data: '2024-02-05',
+    data: '05-02-2024',
     ora: '11:00',
     tipo: 'visita',
     paziente: {
@@ -284,7 +284,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v16',
     ambulatorio: 'Osteoncologia',
-    data: '2024-02-05',
+    data: '05-02-2024',
     tipo: 'discussione',
     paziente: {
       nome: 'Franco',
@@ -299,7 +299,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v17',
     ambulatorio: 'Osteoncologia',
-    data: '2024-02-28',
+    data: '28-02-2024',
     tipo: 'discussione',
     paziente: {
       nome: 'Giuliano',
@@ -314,7 +314,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v18',
     ambulatorio: 'Osteoncologia',
-    data: '2024-03-01',
+    data: '01-03-2024',
     ora: '09:00',
     tipo: 'visita',
     paziente: {
@@ -332,9 +332,9 @@ const mockVisite: VisitaAmbulatorio[] = [
 function VisiteAmbulatori({ onBack }: VisiteAmbulatoriProps) {
   const [ambulatorioAttivo, setAmbulatorioAttivo] = useState<Ambulatorio>('Cure Simultanee');
   const [dateSelezionate, setDateSelezionate] = useState<Record<Ambulatorio, string>>({
-    'Cure Simultanee': '2024-02-15',
-    'Oncogeriatria': '2024-02-10',
-    'Osteoncologia': '2024-02-05',
+    'Cure Simultanee': '15-02-2024',
+    'Oncogeriatria': '10-02-2024',
+    'Osteoncologia': '05-02-2024',
   });
   const [selectedVisita, setSelectedVisita] = useState<VisitaAmbulatorio | null>(null);
 

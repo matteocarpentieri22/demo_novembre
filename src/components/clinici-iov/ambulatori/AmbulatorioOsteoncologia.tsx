@@ -94,7 +94,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v8',
     ambulatorio: 'Osteoncologia',
-    data: '2024-02-05',
+    data: '05-02-2024',
     ora: '08:30',
     tipo: 'visita',
     paziente: {
@@ -110,7 +110,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v9',
     ambulatorio: 'Osteoncologia',
-    data: '2024-02-05',
+    data: '05-02-2024',
     tipo: 'discussione',
     paziente: {
       nome: 'Paolo',
@@ -125,7 +125,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v10',
     ambulatorio: 'Osteoncologia',
-    data: '2024-02-25',
+    data: '25-02-2024',
     ora: '15:00',
     tipo: 'visita',
     paziente: {
@@ -141,7 +141,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v15',
     ambulatorio: 'Osteoncologia',
-    data: '2024-02-05',
+    data: '05-02-2024',
     ora: '11:00',
     tipo: 'visita',
     paziente: {
@@ -157,7 +157,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v16',
     ambulatorio: 'Osteoncologia',
-    data: '2024-02-05',
+    data: '05-02-2024',
     tipo: 'discussione',
     paziente: {
       nome: 'Franco',
@@ -172,7 +172,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v17',
     ambulatorio: 'Osteoncologia',
-    data: '2024-02-28',
+    data: '28-02-2024',
     tipo: 'discussione',
     paziente: {
       nome: 'Giuliano',
@@ -187,7 +187,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v18',
     ambulatorio: 'Osteoncologia',
-    data: '2024-03-01',
+    data: '01-03-2024',
     ora: '09:00',
     tipo: 'visita',
     paziente: {

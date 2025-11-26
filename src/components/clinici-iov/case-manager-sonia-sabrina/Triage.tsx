@@ -23,7 +23,7 @@ const generateMockAnagrafica = (codiceFiscale: string): DatiAnagrafici => {
     codiceFiscale,
     nome: nomi[index],
     cognome: cognomi[index],
-    dataNascita: '1980-01-01',
+    dataNascita: '01-01-1980',
     residenza: `${comuni[index]}, Via Roma 1`,
     telefono: `+39 3${Math.floor(Math.random() * 90000000) + 10000000}`,
     mail: `${nomi[index].toLowerCase()}.${cognomi[index].toLowerCase()}@email.it`,

@@ -14,7 +14,7 @@ const mockPazienti: PazienteTriage[] = [
     codiceFiscale: 'RSSMRA80A01H501U',
     nome: 'Mario',
     cognome: 'Rossi',
-    dataTriage: '2024-01-15',
+    dataTriage: '15-01-2024',
     pdtaSelezionato: 'polmone',
     checklistCompletata: {
       'Rx torace': true,
@@ -28,7 +28,7 @@ const mockPazienti: PazienteTriage[] = [
           id: 'doc1',
           nomeVisita: 'Rx torace',
           nomeFile: 'referto_rx_torace_rossi_mario.pdf',
-          dataCaricamento: '2024-01-10',
+          dataCaricamento: '10-01-2024',
         },
       ],
       'TC torace': [
@@ -36,7 +36,7 @@ const mockPazienti: PazienteTriage[] = [
           id: 'doc2',
           nomeVisita: 'TC torace',
           nomeFile: 'referto_tc_torace_rossi_mario.pdf',
-          dataCaricamento: '2024-01-12',
+          dataCaricamento: '12-01-2024',
         },
       ],
       'Visita pneumologica': [
@@ -44,7 +44,7 @@ const mockPazienti: PazienteTriage[] = [
           id: 'doc3',
           nomeVisita: 'Visita pneumologica',
           nomeFile: 'referto_visita_pneumologica_rossi_mario.pdf',
-          dataCaricamento: '2024-01-13',
+          dataCaricamento: '13-01-2024',
         },
       ],
       'Biopsia ed esame istologico': [
@@ -52,7 +52,7 @@ const mockPazienti: PazienteTriage[] = [
           id: 'doc4',
           nomeVisita: 'Biopsia ed esame istologico',
           nomeFile: 'referto_biopsia_rossi_mario.pdf',
-          dataCaricamento: '2024-01-14',
+          dataCaricamento: '14-01-2024',
         },
       ],
     },
@@ -62,7 +62,7 @@ const mockPazienti: PazienteTriage[] = [
     codiceFiscale: 'BNCGNN75B15L219X',
     nome: 'Giovanna',
     cognome: 'Bianchi',
-    dataTriage: '2024-01-20',
+    dataTriage: '20-01-2024',
     pdtaSelezionato: 'mammella',
     checklistCompletata: {
       'Visita senologica': true,
@@ -75,7 +75,7 @@ const mockPazienti: PazienteTriage[] = [
           id: 'doc5',
           nomeVisita: 'Visita senologica',
           nomeFile: 'referto_visita_senologica_bianchi_giovanna.pdf',
-          dataCaricamento: '2024-01-18',
+          dataCaricamento: '18-01-2024',
         },
       ],
       'Ecografia mammaria': [
@@ -83,7 +83,7 @@ const mockPazienti: PazienteTriage[] = [
           id: 'doc6',
           nomeVisita: 'Ecografia mammaria',
           nomeFile: 'referto_ecografia_bianchi_giovanna.pdf',
-          dataCaricamento: '2024-01-19',
+          dataCaricamento: '19-01-2024',
         },
       ],
       // Biopsia ed esame istologico completata ma senza documento caricato
@@ -94,7 +94,7 @@ const mockPazienti: PazienteTriage[] = [
     codiceFiscale: 'VRDLCA90C20F205Z',
     nome: 'Luca',
     cognome: 'Verdi',
-    dataTriage: '2024-01-22',
+    dataTriage: '22-01-2024',
     pdtaSelezionato: 'colon',
     checklistCompletata: {
       'Visita specialistica': true,
@@ -107,7 +107,7 @@ const mockPazienti: PazienteTriage[] = [
           id: 'doc7',
           nomeVisita: 'Visita specialistica',
           nomeFile: 'referto_visita_specialistica_verdi_luca.pdf',
-          dataCaricamento: '2024-01-21',
+          dataCaricamento: '21-01-2024',
         },
       ],
       // Pancolonscopia e Esame istologico completati ma senza documenti caricati
@@ -118,7 +118,7 @@ const mockPazienti: PazienteTriage[] = [
     codiceFiscale: 'NRIFRN85D25H501T',
     nome: 'Francesca',
     cognome: 'Neri',
-    dataTriage: '2024-01-18',
+    dataTriage: '18-01-2024',
     pdtaSelezionato: 'prostata',
     checklistCompletata: {
       'Visita urologica': true,
@@ -132,7 +132,7 @@ const mockPazienti: PazienteTriage[] = [
           id: 'doc8',
           nomeVisita: 'Visita urologica',
           nomeFile: 'referto_visita_urologica_neri_francesca.pdf',
-          dataCaricamento: '2024-01-16',
+          dataCaricamento: '16-01-2024',
         },
       ],
       'PSA': [
@@ -140,7 +140,7 @@ const mockPazienti: PazienteTriage[] = [
           id: 'doc9',
           nomeVisita: 'PSA',
           nomeFile: 'referto_psa_neri_francesca.pdf',
-          dataCaricamento: '2024-01-17',
+          dataCaricamento: '17-01-2024',
         },
       ],
       // Biopsia prostatica e RM pelvi completate ma senza documenti caricati
@@ -151,7 +151,7 @@ const mockPazienti: PazienteTriage[] = [
     codiceFiscale: 'BLUMRC88E30F205K',
     nome: 'Marco',
     cognome: 'Blu',
-    dataTriage: '2024-01-25',
+    dataTriage: '25-01-2024',
     pdtaSelezionato: 'melanoma',
     checklistCompletata: {
       'Visita dermatologica': true,
@@ -164,7 +164,7 @@ const mockPazienti: PazienteTriage[] = [
           id: 'doc10',
           nomeVisita: 'Visita dermatologica',
           nomeFile: 'referto_visita_dermatologica_blu_marco.pdf',
-          dataCaricamento: '2024-01-23',
+          dataCaricamento: '23-01-2024',
         },
       ],
       'Dermoscopia': [
@@ -172,7 +172,7 @@ const mockPazienti: PazienteTriage[] = [
           id: 'doc11',
           nomeVisita: 'Dermoscopia',
           nomeFile: 'referto_dermoscopia_blu_marco.pdf',
-          dataCaricamento: '2024-01-24',
+          dataCaricamento: '24-01-2024',
         },
       ],
       'Biopsia cutanea': [
@@ -180,7 +180,7 @@ const mockPazienti: PazienteTriage[] = [
           id: 'doc12',
           nomeVisita: 'Biopsia cutanea',
           nomeFile: 'referto_biopsia_cutanea_blu_marco.pdf',
-          dataCaricamento: '2024-01-25',
+          dataCaricamento: '25-01-2024',
         },
       ],
     },
@@ -190,7 +190,7 @@ const mockPazienti: PazienteTriage[] = [
     codiceFiscale: 'GRNPLA82F12H501M',
     nome: 'Paola',
     cognome: 'Grigia',
-    dataTriage: '2024-01-19',
+    dataTriage: '19-01-2024',
     pdtaSelezionato: 'stomaco',
     checklistCompletata: {
       'Visita gastroenterologica': true,
@@ -203,7 +203,7 @@ const mockPazienti: PazienteTriage[] = [
           id: 'doc13',
           nomeVisita: 'Visita gastroenterologica',
           nomeFile: 'referto_visita_gastroenterologica_grigia_paola.pdf',
-          dataCaricamento: '2024-01-17',
+          dataCaricamento: '17-01-2024',
         },
       ],
       // Gastroscopia e Biopsia gastrica completate ma senza documenti caricati
@@ -214,7 +214,7 @@ const mockPazienti: PazienteTriage[] = [
     codiceFiscale: 'RSSGPP70A01H501N',
     nome: 'Giuseppe',
     cognome: 'Rosso',
-    dataTriage: '2024-01-16',
+    dataTriage: '16-01-2024',
     pdtaSelezionato: 'retto',
     checklistCompletata: {
       'Visita proctologica': true,
@@ -228,7 +228,7 @@ const mockPazienti: PazienteTriage[] = [
           id: 'doc14',
           nomeVisita: 'Visita proctologica',
           nomeFile: 'referto_visita_proctologica_rosso_giuseppe.pdf',
-          dataCaricamento: '2024-01-14',
+          dataCaricamento: '14-01-2024',
         },
       ],
       'Colonscopia': [
@@ -236,7 +236,7 @@ const mockPazienti: PazienteTriage[] = [
           id: 'doc15',
           nomeVisita: 'Colonscopia',
           nomeFile: 'referto_colonscopia_rosso_giuseppe.pdf',
-          dataCaricamento: '2024-01-15',
+          dataCaricamento: '15-01-2024',
         },
       ],
       'Biopsia rettale': [
@@ -244,7 +244,7 @@ const mockPazienti: PazienteTriage[] = [
           id: 'doc16',
           nomeVisita: 'Biopsia rettale',
           nomeFile: 'referto_biopsia_rettale_rosso_giuseppe.pdf',
-          dataCaricamento: '2024-01-15',
+          dataCaricamento: '15-01-2024',
         },
       ],
       'RM pelvi': [
@@ -252,7 +252,7 @@ const mockPazienti: PazienteTriage[] = [
           id: 'doc17',
           nomeVisita: 'RM pelvi',
           nomeFile: 'referto_rm_pelvi_rosso_giuseppe.pdf',
-          dataCaricamento: '2024-01-16',
+          dataCaricamento: '16-01-2024',
         },
       ],
     },

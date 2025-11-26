@@ -86,7 +86,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v5',
     ambulatorio: 'Oncogeriatria',
-    data: '2024-02-10',
+    data: '10-02-2024',
     ora: '14:30',
     tipo: 'visita',
     paziente: {
@@ -107,7 +107,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v6',
     ambulatorio: 'Oncogeriatria',
-    data: '2024-02-12',
+    data: '12-02-2024',
     ora: '10:00',
     tipo: 'visita',
     paziente: {
@@ -133,7 +133,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v7',
     ambulatorio: 'Oncogeriatria',
-    data: '2024-02-14',
+    data: '14-02-2024',
     ora: '11:30',
     tipo: 'visita',
     paziente: {
@@ -154,7 +154,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v13',
     ambulatorio: 'Oncogeriatria',
-    data: '2024-02-10',
+    data: '10-02-2024',
     ora: '16:00',
     tipo: 'visita',
     paziente: {
@@ -179,7 +179,7 @@ const mockVisite: VisitaAmbulatorio[] = [
   {
     id: 'v14',
     ambulatorio: 'Oncogeriatria',
-    data: '2024-02-12',
+    data: '12-02-2024',
     ora: '15:30',
     tipo: 'visita',
     paziente: {

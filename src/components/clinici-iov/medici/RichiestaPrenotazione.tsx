@@ -20,7 +20,7 @@ const generateDemoData = (cf: string) => {
   return {
     nome: nomi[index],
     cognome: cognomi[index],
-    dataNascita: '1980-01-01',
+    dataNascita: '01-01-1980',
   };
 };
 

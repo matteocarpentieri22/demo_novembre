@@ -23,7 +23,7 @@ const generateMockAnagrafica = (codiceFiscale: string): DatiAnagrafici => {
     codiceFiscale,
     nome: nomi[index],
     cognome: cognomi[index],
-    dataNascita: '1980-01-01',
+    dataNascita: '01-01-1980',
     residenza: `${comuni[index]}, Via Roma 1`,
     telefono: `+39 3${Math.floor(Math.random() * 90000000) + 10000000}`,
     mail: `${nomi[index].toLowerCase()}.${cognomi[index].toLowerCase()}@email.it`,
@@ -60,6 +60,7 @@ function Triage({ onBack }: TriageProps) {
   const [note, setNote] = useState('');
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [triageCompletato, setTriageCompletato] = useState(false);
+  const [showReview, setShowReview] = useState(false);
 
   // Carica dati quando CF è valido
   useEffect(() => {
@@ -125,9 +126,16 @@ function Triage({ onBack }: TriageProps) {
       return;
     }
 
-    // Triage completato
+    setShowReview(true);
+  };
+
+  const handleReviewConfirm = () => {
+    setShowReview(false);
     setTriageCompletato(true);
-    alert('Triage completato con successo!');
+  };
+
+  const handleReviewBack = () => {
+    setShowReview(false);
   };
 
   if (triageCompletato) {
@@ -160,10 +168,134 @@ function Triage({ onBack }: TriageProps) {
                 setChecklist({});
                 setNote('');
                 setErrors({});
+                setShowReview(false);
               }}
               className="bg-iov-dark-blue hover:bg-iov-dark-blue-hover text-white px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Nuovo Triage
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (showReview && datiAnagrafici && careGiver && mmg) {
+    const selectedPdta = pdtaData.find((pdta) => pdta.id === pdtaSelezionato);
+    const checklistCompletata = Object.entries(checklist).filter(([, checked]) => checked);
+
+    return (
+      <div className="max-w-4xl mx-auto">
+        <button
+          onClick={handleReviewBack}
+          className="flex items-center gap-2 text-iov-dark-blue hover:text-iov-dark-blue-hover mb-6 font-medium"
+        >
+          <ArrowLeft className="w-5 h-5" />
+          Torna alla compilazione
+        </button>
+
+        <div className="bg-white rounded-xl shadow-xl p-8 border border-gray-100 space-y-8">
+          <div>
+            <h2 className="text-3xl font-bold text-iov-gray-text mb-2">Verifica dati triage</h2>
+            <p className="text-gray-500">Controlla le informazioni inserite prima di procedere con la conferma definitiva.</p>
+          </div>
+
+          <div className="grid gap-6">
+            <section className="border border-gray-200 rounded-xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <User className="w-6 h-6 text-iov-dark-blue" />
+                <h3 className="text-xl font-semibold text-iov-gray-text">Paziente</h3>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+                <div>
+                  <p className="uppercase text-gray-400 text-xs font-semibold">Codice Fiscale</p>
+                  <p className="font-semibold font-mono text-base text-iov-gray-text">{datiAnagrafici.codiceFiscale}</p>
+                </div>
+                <div>
+                  <p className="uppercase text-gray-400 text-xs font-semibold">Nome e Cognome</p>
+                  <p className="font-semibold text-base text-iov-gray-text">{datiAnagrafici.nome} {datiAnagrafici.cognome}</p>
+                </div>
+                <div>
+                  <p className="uppercase text-gray-400 text-xs font-semibold">Data di nascita</p>
+                  <p className="font-semibold text-base text-iov-gray-text">{datiAnagrafici.dataNascita}</p>
+                </div>
+                <div>
+                  <p className="uppercase text-gray-400 text-xs font-semibold">Residenza</p>
+                  <p className="font-semibold text-base text-iov-gray-text">{datiAnagrafici.residenza}</p>
+                </div>
+                <div>
+                  <p className="uppercase text-gray-400 text-xs font-semibold">Contatti</p>
+                  <p className="font-semibold text-base text-iov-gray-text">{datiAnagrafici.telefono} • {datiAnagrafici.mail}</p>
+                </div>
+              </div>
+            </section>
+
+            <section className="border border-gray-200 rounded-xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <User className="w-6 h-6 text-green-600" />
+                <h3 className="text-xl font-semibold text-iov-gray-text">Care Giver</h3>
+              </div>
+              <p className="text-sm text-gray-600">
+                {careGiver.nome} {careGiver.cognome} • {careGiver.telefono} • {careGiver.mail}
+              </p>
+            </section>
+
+            <section className="border border-gray-200 rounded-xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <User className="w-6 h-6 text-blue-600" />
+                <h3 className="text-xl font-semibold text-iov-gray-text">Medico di Medicina Generale</h3>
+              </div>
+              <p className="text-sm text-gray-600">
+                {mmg.nome} {mmg.cognome} • {mmg.comuneRiferimento} • {mmg.telefono} • {mmg.mail}
+              </p>
+            </section>
+
+            <section className="border border-gray-200 rounded-xl p-6 space-y-3">
+              <div className="flex items-center gap-3">
+                <ClipboardList className="w-6 h-6 text-iov-dark-blue" />
+                <h3 className="text-xl font-semibold text-iov-gray-text">Dettagli triage</h3>
+              </div>
+              <p className="text-sm text-gray-600">
+                <span className="font-semibold text-iov-gray-text">PDTA selezionato:</span> {selectedPdta ? selectedPdta.name : 'Non indicato'}
+              </p>
+              <p className="text-sm text-gray-600">
+                <span className="font-semibold text-iov-gray-text">Impegnativa:</span> {impegnativaFileName || 'Non caricata'}
+              </p>
+              <div>
+                <p className="text-sm font-semibold text-iov-gray-text mb-1">Checklist visite completate</p>
+                {checklistCompletata.length > 0 ? (
+                  <ul className="list-disc list-inside text-sm text-gray-600">
+                    {checklistCompletata.map(([exam]) => (
+                      <li key={exam}>{exam}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-sm text-gray-500">Nessuna visita selezionata</p>
+                )}
+              </div>
+              {note && (
+                <div>
+                  <p className="text-sm font-semibold text-iov-gray-text mb-1">Note</p>
+                  <p className="text-sm text-gray-600 whitespace-pre-line">{note}</p>
+                </div>
+              )}
+            </section>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3 sm:justify-end">
+            <button
+              type="button"
+              onClick={handleReviewBack}
+              className="px-6 py-3 rounded-lg border-2 border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50 font-semibold transition-all"
+            >
+              Modifica dati
+            </button>
+            <button
+              type="button"
+              onClick={handleReviewConfirm}
+              className="px-6 py-3 rounded-lg bg-gradient-to-r from-iov-dark-blue to-iov-dark-blue-hover text-white font-semibold shadow hover:shadow-lg transition-all"
+            >
+              Conferma e completa il triage
             </button>
           </div>
         </div>
