@@ -69,17 +69,17 @@ function PlatformSelector() {
               >
                 {/* Decorative gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
+
                 {/* Icon container */}
                 <div className="bg-white w-20 h-20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md relative z-10 flex-shrink-0">
                   <Icon className={`w-10 h-10 ${platform.iconColor}`} />
                 </div>
-                
+
                 {/* Title */}
                 <h2 className={`text-2xl font-bold ${platform.textColor} mb-3 relative z-10 flex-shrink-0`}>
                   {platform.title}
                 </h2>
-                
+
                 {/* Description */}
                 <p className={`${platform.textColor} text-base leading-relaxed opacity-90 relative z-10 flex-grow`}>
                   {platform.description}
