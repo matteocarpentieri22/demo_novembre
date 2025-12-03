@@ -33,7 +33,7 @@ type LucideIconType = typeof ShieldCheck;
 const quoteBlocks = [
   {
     title: 'Dichiarazione Universale dei Diritti Umani',
-    subtitle: 'ARTICOLO 25',
+    subtitle: 'ARTICOLO 25, punto 1, adottata dall’Assemblea Generale delle Nazioni Unite il 10 dicembre 1948',
     text: '“Ogni individuo ha diritto ad un tenore di vita sufficiente a garantire la salute e il benessere proprio e della sua famiglia con particolare riguardo all’alimentazione, al vestiario, all’abitazione, alle cure mediche e ai servizi sociali necessari; e ha diritto alla sicurezza in caso di disoccupazione, malattia, invalidità, vedovanza, vecchiaia o in ogni altro caso di perdita dei mezzi di sussistenza per circostanze indipendenti dalla sua volontà.”',
     number: '25'
   },
@@ -897,10 +897,10 @@ function Paziente() {
           <main className="flex-1 space-y-8">
             {/* Title Section */}
             <div className="text-center space-y-2 py-8">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-iov-dark-blue">
-                I Diritti del <span className="text-iov-light-blue-dark">Malato</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-iov-dark-blue to-iov-light-blue-dark pb-2">
+                I Diritti del Malato
                 <br />
-                <span className="text-iov-dark-blue">Oncologico</span>
+                Oncologico
               </h1>
             </div>
 
