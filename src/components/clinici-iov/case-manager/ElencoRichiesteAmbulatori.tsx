@@ -747,7 +747,7 @@ function ElencoRichiesteAmbulatori({ onBack }: ElencoRichiesteAmbulatoriProps) {
     const matchScoreMax = !filtroScoreMax || ambulatorioAttivo === 'Oncogeriatria' || (richiesta.score !== undefined && richiesta.score <= parseInt(filtroScoreMax));
     const matchDataRichiesta = !filtroDataRichiesta || richiesta.dataRichiesta === filtroDataRichiesta;
     const matchTempoRimanente = !filtroTempoRimanente || richiesta.tempoRimanente === filtroTempoRimanente;
-    const matchSearch = !searchTerm || 
+    const matchSearch = !searchTerm ||
       richiesta.nome.toLowerCase().includes(searchTerm.toLowerCase()) ||
       richiesta.cognome.toLowerCase().includes(searchTerm.toLowerCase()) ||
       richiesta.codiceFiscale.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -785,7 +785,7 @@ function ElencoRichiesteAmbulatori({ onBack }: ElencoRichiesteAmbulatoriProps) {
     // Per Osteoncologia, se è una discussione, l'ora non è obbligatoria
     const isOsteoncologia = selectedRichiesta?.ambulatorio === 'Osteoncologia';
     const isDiscussione = selectedRichiesta?.richiestaPer?.includes('discussione');
-    
+
     if (!isOsteoncologia || !isDiscussione) {
       // Per visite o altri ambulatori, l'ora è obbligatoria
       if (!newSlot.ora) {
@@ -793,7 +793,7 @@ function ElencoRichiesteAmbulatori({ onBack }: ElencoRichiesteAmbulatoriProps) {
         return;
       }
     }
-    
+
     if (selectedRichiesta) {
       const slotCompleto = {
         ...newSlot,
@@ -802,7 +802,6 @@ function ElencoRichiesteAmbulatori({ onBack }: ElencoRichiesteAmbulatoriProps) {
       const updated = { ...selectedRichiesta, slot: slotCompleto, statoSlot: 'prenotato' as const, tempoRimanente: 'in tempo' };
       setSelectedRichiesta(updated);
       setEditingSlot(false);
-      alert('Slot prenotato con successo!');
     }
   };
 
@@ -1433,11 +1432,10 @@ function ElencoRichiesteAmbulatori({ onBack }: ElencoRichiesteAmbulatoriProps) {
               <button
                 key={ambulatorio}
                 onClick={() => setAmbulatorioAttivo(ambulatorio)}
-                className={`px-6 py-3 font-semibold text-base border-b-2 transition-colors whitespace-nowrap ${
-                  ambulatorioAttivo === ambulatorio
+                className={`px-6 py-3 font-semibold text-base border-b-2 transition-colors whitespace-nowrap ${ambulatorioAttivo === ambulatorio
                     ? 'border-iov-dark-blue text-iov-dark-blue bg-iov-light-blue-light'
                     : 'border-transparent text-iov-gray-text hover:text-iov-dark-blue hover:border-gray-300'
-                }`}
+                  }`}
               >
                 {ambulatorio} ({count})
               </button>
@@ -1564,9 +1562,8 @@ function ElencoRichiesteAmbulatori({ onBack }: ElencoRichiesteAmbulatoriProps) {
                 {richiesteTabAttivo.map((richiesta, index) => (
                   <tr
                     key={richiesta.id}
-                    className={`transition-colors duration-150 ${
-                      index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
-                    } hover:bg-iov-light-blue-light hover:shadow-sm`}
+                    className={`transition-colors duration-150 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                      } hover:bg-iov-light-blue-light hover:shadow-sm`}
                   >
                     <td className="py-4 px-4 text-base font-medium text-iov-gray-text whitespace-normal">
                       {richiesta.nome} {richiesta.cognome}
