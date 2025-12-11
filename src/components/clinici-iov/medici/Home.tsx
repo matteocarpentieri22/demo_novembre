@@ -36,10 +36,10 @@ function Home({ onNavigate, notificheNonLette }: HomeProps) {
       badge: notificheNonLette,
     },
     {
-      id: 'storico-visite in' as OncologoPage,
+      id: 'storico-visite' as OncologoPage,
       icon: History,
       title: 'Storico Visite',
-      description: 'Consulta lo storico delle visite  presso gli ambulatori multidisciplinari',
+      description: 'Consulta lo storico delle visite presso gli ambulatori multidisciplinari',
       color: 'bg-iov-light-blue',
       textColor: 'text-iov-dark-blue-text',
       badge: undefined as number | undefined,
@@ -59,7 +59,7 @@ function Home({ onNavigate, notificheNonLette }: HomeProps) {
             >
               {/* Decorative gradient overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
+
               {/* Header with icon and title */}
               <div className="flex items-center gap-4 sm:gap-5 mb-4 sm:mb-5 relative z-10">
                 {/* Icon container */}
@@ -71,7 +71,7 @@ function Home({ onNavigate, notificheNonLette }: HomeProps) {
                     </span>
                   )}
                 </div>
-                
+
                 {/* Title with arrow */}
                 <div className="flex items-center justify-between flex-1 min-w-0">
                   <h3 className={`text-lg sm:text-xl font-bold ${item.textColor} leading-tight`}>
@@ -80,7 +80,7 @@ function Home({ onNavigate, notificheNonLette }: HomeProps) {
                   <ArrowUpRight className={`w-5 h-5 sm:w-6 sm:h-6 ${item.textColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex-shrink-0 ml-2`} />
                 </div>
               </div>
-              
+
               {/* Description */}
               <div className="relative z-10">
                 <p className={`${item.textColor} text-sm sm:text-base leading-relaxed opacity-90`}>

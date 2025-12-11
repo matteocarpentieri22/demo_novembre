@@ -1,6 +1,7 @@
 import { ReactNode, useEffect, useMemo, useState } from 'react';
 import {
   ArrowUpRight,
+  Bus,
   Briefcase,
   Car,
   Globe,
@@ -13,12 +14,15 @@ import {
   AlertTriangle,
   Clock,
   FileText,
+  FileCheck,
+  Landmark,
   Monitor,
   HelpCircle,
   TrendingUp,
   Wallet,
   Accessibility,
   Train,
+  Receipt,
   Sparkles,
   Brain,
   Stethoscope,
@@ -48,6 +52,7 @@ const quoteBlocks = [
 interface SectionConfig {
   id: string;
   title: string;
+  headerTitle?: string;
   icon: LucideIconType;
   content: ReactNode;
 }
@@ -67,7 +72,7 @@ interface SectionNavButtonProps {
   variant: 'desktop' | 'mobile';
 }
 
-function InfoSection({ id, icon: Icon, title, content }: InfoSectionProps) {
+function InfoSection({ id, icon: Icon, title, headerTitle, content }: InfoSectionProps) {
   return (
     <section id={id} className="scroll-mt-28">
       <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-iov-light-blue-dark/20 p-6 md:p-8 space-y-6 relative overflow-hidden">
@@ -76,7 +81,7 @@ function InfoSection({ id, icon: Icon, title, content }: InfoSectionProps) {
           <div className="bg-iov-light-blue-light w-14 h-14 rounded-xl flex items-center justify-center shadow-sm">
             <Icon className="w-7 h-7 text-iov-dark-blue" />
           </div>
-          <h2 className="text-2xl font-bold text-iov-dark-blue font-serif">{title}</h2>
+          <h2 className="text-2xl font-bold text-iov-dark-blue font-serif">{headerTitle || title}</h2>
         </div>
         <div className="text-iov-gray-text leading-relaxed space-y-6">{content}</div>
       </div>
@@ -127,7 +132,7 @@ function Paziente() {
       {
         id: 'ticket-048',
         title: 'Esenzione ticket (048)',
-        icon: FileText,
+        icon: Receipt,
         content: (
           <>
             <p>
@@ -167,7 +172,8 @@ function Paziente() {
       {
         id: 'invalidita-civile',
         title: 'Invalidità civile',
-        icon: Users,
+        headerTitle: 'Riconoscimento di invalidità civile e stato di handicap',
+        icon: FileCheck,
         content: (
           <>
             <div className="space-y-6">
@@ -184,7 +190,7 @@ function Paziente() {
 
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <FileText className="w-5 h-5 text-iov-light-blue-dark" />
+                  <FileCheck className="w-5 h-5 text-iov-dark-blue" />
                   <h3 className="font-bold text-iov-dark-blue text-lg">Stato di handicap</h3>
                 </div>
                 <p>
@@ -277,16 +283,12 @@ function Paziente() {
                   <p className="text-sm">
                     Si ottiene il PIN per accedere alla compilazione della domanda presso la sede
                     dell’INPS, online attraverso la procedura di richiesta PIN chiamando il numero
-                    verde 803 164 (gratuito da rete fissa) oppure 06 164 164 da rete mobile (a
-                    pagamento). Una volta ottenuto il PIN “dispositivo”, ci si collega al sito
-                    internet dell’INPS (https://www.inps.it) per la compilazione ONLINE della
-                    domanda abbinando il numero di certificato indicato sulla ricevuta di
-                    trasmissione.
+                    verde <a href="tel:803164" className="text-iov-dark-blue hover:underline font-bold">803 164</a> (gratuito da rete fissa) oppure <a href="tel:06164164" className="text-iov-dark-blue hover:underline font-bold">06 164 164</a> da rete mobile (a pagamento in base al piano tariffario del proprio gestore telefonico). Una volta ottenuto il PIN “dispositivo”, il paziente o un suo familiare si collega al sito internet dell’INPS (<a href="https://www.inps.it/nuovoportaleinps/default.aspx" target="_blank" rel="noopener noreferrer" className="text-iov-dark-blue hover:underline">https://www.inps.it/nuovoportaleinps/default.aspx</a>) per la compilazione ONLINE della domanda abbinando il numero di certificato indicato sulla ricevuta di trasmissione rilasciata dal medico certificatore.
                   </p>
                 </div>
                 <div className="bg-iov-light-blue-light/50 p-6 rounded-xl border border-iov-light-blue/30">
                   <div className="flex items-center gap-2 mb-4">
-                    <HelpCircle className="w-5 h-5 text-iov-light-blue-dark" />
+                    <HelpCircle className="w-5 h-5 text-iov-dark-blue" />
                     <h4 className="font-bold text-iov-dark-blue">Per chi non usa il computer</h4>
                   </div>
                   <p className="text-sm">
@@ -326,11 +328,11 @@ function Paziente() {
       {
         id: 'benefici-lavoro',
         title: 'Benefici Lavoro',
+        headerTitle: 'Benefici economici, assistenziali e lavorativi previsti dalla legge',
         icon: Briefcase,
         content: (
           <>
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-iov-dark-blue font-serif">Benefici economici, assistenziali e lavorativi previsti dalla legge</h2>
 
               <div>
                 <div className="flex items-center gap-2 mb-2">
@@ -346,7 +348,7 @@ function Paziente() {
 
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <Briefcase className="w-5 h-5 text-iov-light-blue-dark" />
+                  <Briefcase className="w-5 h-5 text-iov-dark-blue" />
                   <h3 className="font-bold text-iov-dark-blue text-lg">Benefici e agevolazioni nel lavoro</h3>
                 </div>
                 <p>
@@ -397,11 +399,11 @@ function Paziente() {
       {
         id: 'benefici-economici',
         title: 'Benefici Economici',
+        headerTitle: 'Benefici socio-economici',
         icon: Wallet,
         content: (
           <>
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-iov-dark-blue font-serif">Benefici socio-economici</h2>
               <p>
                 Il paziente oncologico in base al grado di invalidità riconosciuto e al reddito potrebbe avere diritto ad un sostegno economico dall’INPS. L’iter prevede
                 una verifica dei dati socio-economici e reddituali trasmessi telematicamente dal cittadino dopo il ricevimento del verbale della commissione.
@@ -427,7 +429,7 @@ function Paziente() {
 
               <div className="bg-white border border-iov-light-blue-dark/20 rounded-xl p-6 shadow-sm">
                 <div className="flex items-center gap-2 mb-2">
-                  <TrendingUp className="w-5 h-5 text-iov-light-blue-dark" />
+                  <TrendingUp className="w-5 h-5 text-iov-dark-blue" />
                   <h3 className="font-bold text-iov-dark-blue text-lg">Invalidità civile totale (100%)</h3>
                 </div>
                 <p>
@@ -450,16 +452,11 @@ function Paziente() {
       {
         id: 'mobilita',
         title: 'Mobilità',
+        headerTitle: 'Benefici per la mobilità',
         icon: Car,
         content: (
           <>
             <div className="space-y-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-iov-light-blue flex items-center justify-center">
-                  <Car className="w-6 h-6 text-iov-dark-blue" />
-                </div>
-                <h2 className="text-2xl font-bold text-iov-dark-blue font-serif">Benefici per la mobilità</h2>
-              </div>
 
               <div>
                 <div className="flex items-center gap-2 mb-2">
@@ -471,9 +468,9 @@ function Paziente() {
                   residenza, che permette:
                 </p>
                 <ul className="list-disc pl-5 space-y-2 text-iov-gray-text">
-                  <li>Il libero transito nelle zone a traffico limitato e nelle zone pedonali</li>
-                  <li>Il parcheggio gratuito negli appositi spazi individuati dal simbolo di portatore di handicap</li>
-                  <li>La sosta senza limitazioni di tempo nelle aree di parcheggio a tempo determinato</li>
+                  <li>Il libero transito nelle zone a traffico limitato e nelle zone pedonali;</li>
+                  <li>Il parcheggio gratuito negli appositi spazi individuati dal simbolo di portatore di handicap;</li>
+                  <li>La sosta senza limitazioni di tempo nelle aree di parcheggio a tempo determinato.</li>
                 </ul>
               </div>
 
@@ -497,7 +494,7 @@ function Paziente() {
 
               <div className="bg-white border border-iov-light-blue-dark/20 rounded-xl p-6 shadow-sm">
                 <div className="flex items-center gap-2 mb-2">
-                  <Train className="w-5 h-5 text-iov-dark-blue" />
+                  <Bus className="w-5 h-5 text-iov-dark-blue" />
                   <h3 className="font-bold text-iov-dark-blue text-lg">Benefici e agevolazioni in autobus</h3>
                 </div>
                 <p>
@@ -508,7 +505,7 @@ function Paziente() {
 
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <Train className="w-5 h-5 text-iov-light-blue-dark" />
+                  <Train className="w-5 h-5 text-iov-dark-blue" />
                   <h3 className="font-bold text-iov-dark-blue text-lg">Benefici e agevolazioni in treno</h3>
                 </div>
                 <p className="mb-4">
@@ -556,14 +553,11 @@ function Paziente() {
       {
         id: 'parrucche',
         title: 'Parrucche',
+        headerTitle: "Agevolazione nell'acquisto di parrucche",
         icon: Sparkles,
         content: (
           <>
             <div className="space-y-6">
-              <div className="flex items-center gap-2 mb-4">
-                <Sparkles className="w-6 h-6 text-iov-dark-blue" />
-                <h2 className="text-2xl font-bold text-iov-dark-blue font-serif">Agevolazione nell'acquisto di parrucche</h2>
-              </div>
               <p>
                 La perdita di capelli è un effetto collaterale della chemioterapia che può avere un impatto sull’autostima della persona. Per questo motivo, la spesa
                 sostenuta per l’acquisto di una parrucca da parte del paziente oncologico sottoposto a trattamento chemioterapico rientra tra le <span className="font-bold">spese sanitarie
@@ -590,7 +584,7 @@ function Paziente() {
                 </p>
                 <div className="flex items-center gap-2 text-sm font-medium text-iov-dark-blue-text">
                   <span className="text-iov-dark-blue">📞</span>
-                  Per informazioni: volontari AVO al piano rialzato dello IOV, dal lunedì al venerdì, ore 9.00-12.00, oppure tel. <span className="font-bold">049-8215669</span>
+                  Per informazioni: volontari AVO al piano rialzato dello IOV, dal lunedì al venerdì, ore 9.00-12.00, oppure tel. <a href="tel:0498215669" className="font-bold hover:underline">049-8215669</a>
                 </div>
               </div>
             </div>
@@ -604,10 +598,6 @@ function Paziente() {
         content: (
           <>
             <div className="space-y-6">
-              <div className="flex items-center gap-2 mb-4">
-                <Brain className="w-6 h-6 text-iov-dark-blue" />
-                <h2 className="text-2xl font-bold text-iov-dark-blue font-serif">Supporto psicologico</h2>
-              </div>
               <p>
                 Il paziente oncologico e/o un suo familiare hanno diritto ad un supporto psicologico. Presso lo IOV si può accedere alle prestazioni dell’UOSD Psicologia
                 Ospedaliera con un’impegnativa redatta dal medico specialista di riferimento.
@@ -628,10 +618,6 @@ function Paziente() {
         content: (
           <>
             <div className="space-y-6">
-              <div className="flex items-center gap-2 mb-4">
-                <Home className="w-6 h-6 text-iov-dark-blue" />
-                <h2 className="text-2xl font-bold text-iov-dark-blue font-serif">Assistenza domiciliare</h2>
-              </div>
               <p>
                 Qualora il malato necessiti di cure specialistiche, infermieristiche, riabilitative, socio-assistenziali o cure palliative può beneficiare dei servizi erogati
                 dall’ULSS e dal Comune di residenza, organizzate sotto il nome di <span className="font-bold">Assistenza Domiciliare Integrata</span>. Tale assistenza può essere di due tipi:
@@ -641,7 +627,7 @@ function Paziente() {
                 <div className="bg-white border border-iov-light-blue-dark/20 rounded-xl p-6 shadow-sm">
                   <div className="flex items-center gap-2 mb-4">
                     <UserCheck className="w-5 h-5 text-iov-dark-blue" />
-                    <h3 className="font-bold text-iov-dark-blue">ADI Semplice</h3>
+                    <h3 className="font-bold text-iov-dark-blue">Assistenza Domiciliare Integrata Semplice</h3>
                   </div>
                   <p className="text-sm mb-4">
                     Destinata a persone <span className="font-bold">parzialmente autosufficienti</span> e consiste
@@ -655,8 +641,8 @@ function Paziente() {
                 </div>
                 <div className="bg-white border border-iov-light-blue-dark/20 rounded-xl p-6 shadow-sm">
                   <div className="flex items-center gap-2 mb-4">
-                    <Stethoscope className="w-5 h-5 text-iov-light-blue-dark" />
-                    <h3 className="font-bold text-iov-dark-blue">ADI Complessa</h3>
+                    <Stethoscope className="w-5 h-5 text-iov-dark-blue" />
+                    <h3 className="font-bold text-iov-dark-blue">Assistenza Domiciliare Integrata Complessa</h3>
                   </div>
                   <p className="text-sm mb-4">
                     Destinata a persone <span className="font-bold">non autosufficienti</span> e prevede l’erogazione di
@@ -684,14 +670,11 @@ function Paziente() {
       {
         id: 'assistenza-estero',
         title: 'Assistenza Estero',
+        headerTitle: "Assistenza Sanitaria all'Estero",
         icon: Plane,
         content: (
           <>
             <div className="space-y-6">
-              <div className="flex items-center gap-2 mb-4">
-                <Globe className="w-6 h-6 text-iov-dark-blue" />
-                <h2 className="text-2xl font-bold text-iov-dark-blue font-serif">Assistenza Sanitaria all'Estero</h2>
-              </div>
               <p>
                 L’assistenza sanitaria all’estero è consentita, in via di eccezione e dietro adeguata richiesta, solo presso centri di altissima specializzazione per prestazioni
                 di diagnosi, cura e riabilitazione che <span className="font-bold">non sono ottenibili in Italia in modo adeguato o tempestivo</span>.
@@ -699,18 +682,22 @@ function Paziente() {
 
               <div className="bg-iov-light-blue-light/50 rounded-xl p-6 border border-iov-light-blue/30">
                 <h3 className="font-bold text-iov-dark-blue mb-4">Per ulteriori informazioni contattare:</h3>
-                <p className="mb-4 text-sm text-iov-gray-text">L’ufficio della propria Distretto Sanitario dell’ULSS che si occupa di assistenza sanitaria all’estero;</p>
-                <div className="space-y-2 text-sm">
-                  <p className="font-medium text-iov-dark-blue-text">Il Punto di Contatto Regionale del Veneto <span className="font-normal text-iov-gray-text">per l’assistenza sanitaria transfrontaliera:</span></p>
-                  <div className="flex items-center gap-2 text-iov-gray-text">
-                    <span className="text-iov-dark-blue">📞</span>
-                    Numero verde <span className="font-bold">800 310640</span> (dal lunedì al venerdì, ore 9.00-14.00)
-                  </div>
-                  <div className="flex items-center gap-2 text-iov-gray-text">
-                    <span className="text-iov-dark-blue">✉️</span>
-                    Email: <a href="mailto:puntocontattoregionale@aopd.veneto.it" className="text-iov-dark-blue hover:underline">puntocontattoregionale@aopd.veneto.it</a>
-                  </div>
-                </div>
+                <ul className="list-disc pl-5 space-y-4 text-sm text-iov-gray-text mb-4">
+                  <li>L’ufficio della propria Distretto Sanitario dell’ULSS che si occupa di assistenza sanitaria all’estero;</li>
+                  <li>
+                    <span className="font-medium text-iov-dark-blue-text">Il Punto di Contatto Regionale del Veneto</span> per l’assistenza sanitaria transfrontaliera:
+                    <div className="mt-2 space-y-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-iov-dark-blue">📞</span>
+                        Numero verde <a href="tel:800310640" className="font-bold hover:underline">800 310640</a> (dal lunedì al venerdì, ore 9.00-14.00)
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-iov-dark-blue">✉️</span>
+                        Email: <a href="mailto:puntocontattoregionale@aopd.veneto.it" className="text-iov-dark-blue hover:underline">puntocontattoregionale@aopd.veneto.it</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
                 <p className="mt-4 text-xs text-iov-gray-text/70">Indicare: dati anagrafici, ULSS di appartenenza, sintesi della richiesta e numero di telefono per essere ricontattati.</p>
               </div>
             </div>
@@ -724,10 +711,6 @@ function Paziente() {
         content: (
           <>
             <div className="space-y-6">
-              <div className="flex items-center gap-2 mb-4">
-                <Globe className="w-6 h-6 text-iov-dark-blue" />
-                <h2 className="text-2xl font-bold text-iov-dark-blue font-serif">Per gli stranieri</h2>
-              </div>
 
               <div className="bg-white border border-iov-light-blue-dark/20 rounded-xl p-6 shadow-sm">
                 <div className="flex items-center gap-2 mb-2">
@@ -742,7 +725,7 @@ function Paziente() {
 
               <div className="bg-white border border-iov-light-blue-dark/20 rounded-xl p-6 shadow-sm">
                 <div className="flex items-center gap-2 mb-2">
-                  <FileText className="w-5 h-5 text-iov-light-blue-dark" />
+                  <FileText className="w-5 h-5 text-iov-dark-blue" />
                   <h3 className="font-bold text-iov-dark-blue text-lg">Cittadini extracomunitari con permesso di soggiorno</h3>
                 </div>
                 <p className="text-iov-gray-text">
@@ -958,16 +941,29 @@ function Paziente() {
               <h2 className="text-4xl font-serif font-bold">La cura è nella ricerca.</h2>
 
               <div className="space-y-4">
-                <p className="text-blue-100">Può sostenere l'Istituto Oncologico Veneto con una donazione:</p>
-                <ul className="text-blue-100 space-y-2">
-                  <li>• Tramite bonifico</li>
-                  <li>• Tramite piattaforma PagoPA</li>
-                  <li>• Devolvendo il 5 per mille (C.F. 04074560287)</li>
-                </ul>
+                <p className="text-blue-100 mb-8">Può sostenere l'Istituto Oncologico Veneto con una donazione:</p>
+
+                <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all group cursor-default">
+                    <Landmark className="w-8 h-8 text-iov-yellow mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                    <p className="font-bold text-white">Tramite bonifico</p>
+                  </div>
+
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all group cursor-default">
+                    <Wallet className="w-8 h-8 text-iov-yellow mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                    <p className="font-bold text-white">Tramite piattaforma PagoPA</p>
+                  </div>
+
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all group cursor-default">
+                    <Heart className="w-8 h-8 text-iov-yellow mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                    <p className="font-bold text-white">Devolvendo il 5 per mille</p>
+                    <p className="text-sm text-blue-200 mt-1 font-mono">C.F. 04074560287</p>
+                  </div>
+                </div>
               </div>
 
               <a
-                href="https://www.ioveneto.it/sostienici"
+                href="https://www.ioveneto.it/sostieni-lo-iov/lo-iov/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-iov-yellow hover:bg-iov-yellow-dark text-iov-yellow-text px-8 py-4 rounded-full font-bold transition-colors shadow-lg hover:shadow-xl hover:-translate-y-1 transform duration-300"
